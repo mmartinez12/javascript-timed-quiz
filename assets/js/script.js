@@ -12,6 +12,8 @@ var timeGauge = document.getElementById("timeGauge");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
 var rightWrong = document.getElementById("rightWrong");
+var score = document.getElementById("score");
+var scoreList = document.getElementById("scores");
 
 // create our questions
 let questions = [
