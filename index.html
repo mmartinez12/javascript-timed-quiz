@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Javascript Quiz</title>
+</head>
+
+<body>
+    <!-- header section -->
+    <header>
+        <h4 id="highscores"><a href="scores.html">View High Scores</a></h4>
+        <h2 class="timer" id="timer"></h2>
+            <div id="counter"></div>
+            <div id="timeGauge"></div>
+        <h2 id="progress"></h2>
+    </header>
+    <!-- end header section -->
+
+    <!-- quiz content section -->
+    <main id="container">
+        <div id="pg1">
+        <h1>Coding Quiz Challenge</h1>
+        <p>Try to answer the following code-related questions within the time limit.
+            Keep in mind that incorrect answers will penalize your time by ten seconds!</p>
+        </div>
+        <button id="start-btn">Start Quiz!</button>
+            <div id="quiz" style="display: none">
+                <div id="question"></div>
+                <div id="choices"></div>
+                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+                    <div class="choice" id="D" onclick="checkAnswer('D')"></div>
+            </div>
+            <div id="rightWrong"></div>
+        </main>
+        <!-- end quiz content section -->
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
