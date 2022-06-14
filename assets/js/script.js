@@ -144,7 +144,7 @@ function answerIsCorrect(){
     rightWrong.innerHTML = "<p>Correct!</p>";
 }
 
-// answer is Wrong
+// answer is wrong
 function answerIsWrong(){
     count = count - 10;
     rightWrong.innerHTML = "<p>Wrong!</p>";
