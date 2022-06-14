@@ -150,6 +150,11 @@ function answerIsWrong(){
     rightWrong.innerHTML = "<p>Wrong!</p>";
 }
 
+//         _
+//     .__(.)< (MEOW)
+//     \___)   
+// ~~~~~~~~~~~~~~~~
+
 // score render
 function scoreRender(){
     
