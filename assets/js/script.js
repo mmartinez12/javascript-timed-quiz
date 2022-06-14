@@ -78,6 +78,11 @@ function renderQuestion(){
 
 start.addEventListener("click",startQuiz);
 
+//         _
+//     .__(.)< (MEOW)
+//     \___)   
+// ~~~~~~~~~~~~~~~~
+
 // start quiz
 function startQuiz(){
     start.style.display = "none";
