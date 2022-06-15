@@ -12,7 +12,7 @@
     
     <!-- header section -->
     <header>
-        <h4 id="highscores"><a href="scores.html">View High Scores</a></h4>
+        <h4 id="highscores"><a href="scores.html">View High Scores</a><div id="retry" style="display: none"> / <a href=index.html>Retry Quiz</a></div></h4>
         <h2 class="timer" id="timer"></h2>
             <div id="counter"></div>
             <div id="timeGauge"></div>
@@ -26,8 +26,8 @@
         <h1>Coding Quiz Challenge</h1>
         <p>Try to answer the following code-related questions within the time limit.
             Keep in mind that incorrect answers will penalize your time by ten seconds!</p>
+            <button id="start-btn">Start Quiz!</button>
         </div>
-        <button id="start-btn">Start Quiz!</button>
             <div id="quiz" style="display: none">
                 <div id="question"></div>
                 <div id="choices"></div>
@@ -37,6 +37,16 @@
                     <div class="choice" id="D" onclick="checkAnswer('D')"></div>
             </div>
             <div id="rightWrong"></div>
+
+            <div id="finalScore" style="display: none;">
+                <div id="pg1">
+                <h1>All done!</h1>
+                <div id="scoreContainer"></div>
+                <p id="scoreSubmit">Want to save your score?<br><br>Enter initials: <input type="text" name="initials" /></p>
+                </div>
+                <a href="scores.html"><button id="add-initials">Submit</button></a>
+            </div>
+
         </main>
         <!-- end quiz content section -->
 

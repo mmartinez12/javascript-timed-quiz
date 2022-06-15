@@ -11,9 +11,13 @@ var counter = document.getElementById("counter");
 var timeGauge = document.getElementById("timeGauge");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
+var highScores = document.getElementById("highScore");
 var rightWrong = document.getElementById("rightWrong");
-var score = document.getElementById("score");
+var finalScore = document.getElementById("finalScore");
+var retry = document.getElementById("retry");
+
 var scoreList = document.getElementById("scores");
+var initials = document.querySelector("input[name='initials']");
 
 // create our questions
 let questions = [
@@ -65,7 +69,7 @@ var questionTime = 10 // 10s
 var gaugeWidth = 500; // 300px
 var gaugeUnit = gaugeWidth / totalTime;
 let TIMER;
-let score = 0;
+var score = 0;
 
 // render a question
 function renderQuestion(){
@@ -139,10 +143,12 @@ function checkAnswer(answer){
         clearInterval(TIMER);
         endQuiz();
     }
+    console.log(score);
 }
 
 // answer is correct
 function answerIsCorrect(){
+    score++;
     rightWrong.innerHTML = "<p>Correct!</p>";
 }
 
@@ -157,18 +163,22 @@ function answerIsWrong(){
 //     \___)   
 // ~~~~~~~~~~~~~~~~
 
+var scorePerCent = Math.round(100 * score/questions.length);
+
 // score render
 function scoreRender(){
-    
-    // calculate user's final score
-    var scorePerCent = Math.round(100 * score/questions.length);
-    
+    scoreDiv.style.display = "block";
     // display score
     scoreDiv.innerHTML = "<p>Your score is "+ scorePerCent +"%</p>";
+    console.log(scorePerCent);
 }
 
 // end the quiz
 function endQuiz() {
-    window.location.href = "scoresubmit.html";
+    quiz.style.display="none";
+    rightWrong.style.display="none";
+    counter.style.display="none";
     scoreRender();
+    finalScore.style.display="block";
+    retry.style.display="inline";
 }
