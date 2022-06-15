@@ -15,7 +15,6 @@ var highScores = document.getElementById("highScore");
 var rightWrong = document.getElementById("rightWrong");
 var finalScore = document.getElementById("finalScore");
 var retry = document.getElementById("retry");
-
 var scoreList = document.getElementById("scores");
 var initials = document.querySelector("input[name='initials']");
 
@@ -126,7 +125,7 @@ function renderCounter(){
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
         // answer is correct
-        score++;
+        score = score + 1;
         // tell user they are correct
         answerIsCorrect();
     }else {
@@ -143,12 +142,10 @@ function checkAnswer(answer){
         clearInterval(TIMER);
         endQuiz();
     }
-    console.log(score);
 }
 
 // answer is correct
 function answerIsCorrect(){
-    score++;
     rightWrong.innerHTML = "<p>Correct!</p>";
 }
 
@@ -163,14 +160,12 @@ function answerIsWrong(){
 //     \___)   
 // ~~~~~~~~~~~~~~~~
 
-var scorePerCent = Math.round(100 * score/questions.length);
-
 // score render
 function scoreRender(){
     scoreDiv.style.display = "block";
+    var scorePerCent = Math.round(100 * score/questions.length);
     // display score
     scoreDiv.innerHTML = "<p>Your score is "+ scorePerCent +"%</p>";
-    console.log(scorePerCent);
 }
 
 // end the quiz
