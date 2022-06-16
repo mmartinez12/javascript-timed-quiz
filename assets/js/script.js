@@ -16,7 +16,7 @@ var rightWrong = document.getElementById("rightWrong");
 var finalScore = document.getElementById("finalScore");
 var retry = document.getElementById("retry");
 var viewScores = document.getElementById("view-scores");
-var initials = document.getElementById("initials").value;
+var initials = document.getElementById("initials");
 var submit = document.querySelector("#add-initials");
 
 // create our questions
@@ -168,14 +168,12 @@ function answerIsWrong(){
 // ~~~~~~~~~~~~~~~~
 
 // store the user's initials and score together as an object
-var savedScore = {
-    name: 'initials'.value,
-    theirScore: JSON.stringify(score).value,
-};
+// var savedScore = {
+//     name: 'initials'.value,
+//     theirScore: JSON.stringify(score).value,
+// };
 
-let hiscores = []
-
-const jsonObj = JSON.stringify(hiscores);
+//const jsonObj = JSON.stringify(hiscores);
 
 // const addName = (event)=>{
 //     event.preventDefault();
@@ -201,8 +199,13 @@ function endQuiz() {
 
 // push the new score to array hiscores and save that array to localStorage
 submit.onclick = function (){
+    var savedScore = {
+        name: 'initials'.value,
+        theirScore: JSON.stringify(score).value,
+    };
+    let hiscores = [];
     hiscores.push(savedScore);
-    localStorage.setItem("hiscores", jsonObj);
-    console.log(initials);
+    localStorage.setItem("hiscores", JSON.stringify(hiscores));
+    console.log(initials.value);
     //document.input.reset();
 }

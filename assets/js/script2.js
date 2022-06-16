@@ -3,9 +3,9 @@ var scoreDisplay = document.getElementById("#scores");
 //var hiscores = document.getElementById(".hiscores")
 
 
-localStorage.getItem(savedScore);
+localStorage.getItem("hiscores");
 
-console.log(savedScore);
+console.log("hiscores");
 
 
 
