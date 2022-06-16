@@ -185,6 +185,9 @@ function answerIsWrong(){
 //     document.forms[0].reset();
 // }
 
+var savedScore;
+var hiscores;
+
 // end the quiz
 function endQuiz() {
     quiz.style.display="none";
@@ -200,9 +203,10 @@ function endQuiz() {
 // push the new score to array hiscores and save that array to localStorage
 submit.onclick = function (){
     var savedScore = {
-        name: 'initials'.value,
+        name: initials.value,
         theirScore: JSON.stringify(score).value,
     };
+    console.log(savedScore);
     let hiscores = [];
     hiscores.push(savedScore);
     localStorage.setItem("hiscores", JSON.stringify(hiscores));

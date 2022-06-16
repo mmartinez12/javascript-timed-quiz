@@ -5,7 +5,7 @@ var scoreDisplay = document.getElementById("#scores");
 
 localStorage.getItem("hiscores");
 
-console.log("hiscores");
+console.log(localStorage);
 
 
 
