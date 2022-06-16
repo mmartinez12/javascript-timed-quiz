@@ -11,12 +11,13 @@ var counter = document.getElementById("counter");
 var timeGauge = document.getElementById("timeGauge");
 var progress = document.getElementById("progress");
 var scoreDiv = document.getElementById("scoreContainer");
-var highScores = document.getElementById("highScore");
+var highScoreChart = document.getElementById("highScore");
 var rightWrong = document.getElementById("rightWrong");
 var finalScore = document.getElementById("finalScore");
 var retry = document.getElementById("retry");
-var scoreList = document.getElementById("scores");
-var initials = document.querySelector("input[name='initials']");
+var viewScores = document.getElementById("view-scores");
+var initials = document.getElementById("initials").value;
+var submit = document.querySelector("#add-initials");
 
 // create our questions
 let questions = [
@@ -69,6 +70,12 @@ var gaugeWidth = 500; // 300px
 var gaugeUnit = gaugeWidth / totalTime;
 let TIMER;
 var score = 0;
+// const noOfHighScores = 5;
+// const high_Scores = 'highScores';
+// const highScoreString = localStorage.getItem(highScores);
+// const highScores = JSON.parse(highScoreString) ?? [];
+// const lowestScore = highScores[noOfHighScores - 1]?.score ?? 0;
+// const newScore = {score, initials};
 
 // render a question
 function renderQuestion(){
@@ -125,7 +132,7 @@ function renderCounter(){
 function checkAnswer(answer){
     if( answer == questions[runningQuestion].correct){
         // answer is correct
-        score = score + 1;
+        score = score + 20;
         // tell user they are correct
         answerIsCorrect();
     }else {
@@ -160,20 +167,42 @@ function answerIsWrong(){
 //     \___)   
 // ~~~~~~~~~~~~~~~~
 
-// score render
-function scoreRender(){
-    scoreDiv.style.display = "block";
-    var scorePerCent = Math.round(100 * score/questions.length);
-    // display score
-    scoreDiv.innerHTML = "<p>Your score is "+ scorePerCent +"%</p>";
-}
+// store the user's initials and score together as an object
+var savedScore = {
+    name: 'initials'.value,
+    theirScore: JSON.stringify(score).value,
+};
+
+let hiscores = []
+
+const jsonObj = JSON.stringify(hiscores);
+
+// const addName = (event)=>{
+//     event.preventDefault();
+//     let savedScore = {
+//         name: 'initials'.value,
+//         theirScore: JSON.stringify(score).value
+//     }
+//     hiscores.push(savedScore);
+//     document.forms[0].reset();
+// }
 
 // end the quiz
 function endQuiz() {
     quiz.style.display="none";
     rightWrong.style.display="none";
     counter.style.display="none";
-    scoreRender();
+    viewScores.style.display="none";
+    scoreDiv.style.display = "block";
+    scoreDiv.innerHTML = "<p>Your score is "+ score +"%</p>";
     finalScore.style.display="block";
     retry.style.display="inline";
+}
+
+// push the new score to array hiscores and save that array to localStorage
+submit.onclick = function (){
+    hiscores.push(savedScore);
+    localStorage.setItem("hiscores", jsonObj);
+    console.log(initials);
+    //document.input.reset();
 }

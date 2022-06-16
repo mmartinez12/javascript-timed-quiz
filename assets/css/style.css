@@ -111,13 +111,18 @@ header a:visited {
 /* ~~~~~~~~~~~~~~~~~~~~ */
 
 /* start score submit attributes */
+#score-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 #add-initials {
     background-color: rgb(41, 101, 212);
     color: aliceblue;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: large;
-    max-width: fit-content;
-    margin-left: 350px;
+    max-width: 200px;
     padding: 15px;
     border-radius: 10px;
     border: 2px solid;
@@ -127,12 +132,26 @@ header a:visited {
     background-color: rgb(84, 10, 203);
 }
 
-#add-initials a:link {
+#go-to-scores {
+    background-color: rgb(41, 101, 212);
+    color: aliceblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    max-width: 200px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+#go-to-scores:hover {
+    background-color: rgb(84, 10, 203);
+}
+
+#go-to-scores a:link {
     text-decoration: none;
     color: white;
 }
 
-#add-initials a:visited {
+#go-to-scores a:visited {
     text-decoration: none;
     color: white;
 }
@@ -146,6 +165,22 @@ header a:visited {
 
 #scores {
     padding-left: 300px;
+}
+
+#clearScores {
+    background-color: rgb(41, 101, 212);
+    color: aliceblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: large;
+    max-width: fit-content;
+    margin-left: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid;
+}
+
+#clearScores:hover {
+    background-color: rgb(84, 10, 203);
 }
 /* end score display attributes */
 

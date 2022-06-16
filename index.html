@@ -12,7 +12,7 @@
     
     <!-- header section -->
     <header>
-        <h4 id="highscores"><a href="scores.html">View High Scores</a><div id="retry" style="display: none"> / <a href=index.html>Retry Quiz</a></div></h4>
+        <h4 id="highscores"><div id="view-scores"><a href="scores.html">View High Scores</a></div><div id="retry" style="display: none"><a href=index.html>Retry Quiz</a></div></h4>
         <h2 class="timer" id="timer"></h2>
             <div id="counter"></div>
             <div id="timeGauge"></div>
@@ -42,9 +42,12 @@
                 <div id="pg1">
                 <h1>All done!</h1>
                 <div id="scoreContainer"></div>
-                <p id="scoreSubmit">Want to save your score?<br><br>Enter initials: <input type="text" name="initials" /></p>
+                <p id="scoreSubmit">Want to save your score?<br><br>Enter initials: <input type="text" id="initials" /></p>
                 </div>
-                <a href="scores.html"><button id="add-initials">Submit</button></a>
+                <div id="score-buttons">
+                <button id="add-initials">Submit Score</button>
+                <a href="scores.html"><button id="go-to-scores">View High Scores</button></a>
+                </div>
             </div>
 
         </main>

@@ -18,20 +18,19 @@
 
     <!-- score display section -->
     <main>
-        <div id="container">
+        <div id="container" class="hiscore">
             <h1 id="scoretitle">High Scores</h1>
-            <ol id="scores" style="display: none">
-                <li id="highScore"></li>
-                <li id="highScore"></li>
-                <li id="highScore"></li>
-                <li id="highScore"></li>
-                <li id="highScore"></li>
-            </ol>
+            <table id="scoretable">
+            <button id="clearScores" onclick="clearScores()">Clear High Scores</button>
         </div>
+        <button id="start-btn" style="display:none">Start Quiz!</button>
+        <button id="add-initials" style="display:none">Submit Score</button>
+        <p id="scoreSubmit" style="display:none">Want to save your score?<br><br>Enter initials: <input type="text" id="initials" /></p>
     </main>
      <!-- end score display section -->
 
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/script2.js"></script>
 
 </body>
 </html>
