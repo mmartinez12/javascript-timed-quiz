@@ -10,7 +10,7 @@ console.log(localStorage);
 
 
 function populateTable() {
-    scoreList.innerHTML = hiscores.map((row) => {
+    scoreDisplay.innerHTML = hiscores.map((row) => {
       return `<tr><td>${row.clicker}</td><td>${row.score}</tr>`;
     }).join('');
   }

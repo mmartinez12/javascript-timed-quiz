@@ -167,24 +167,6 @@ function answerIsWrong(){
 //     \___)   
 // ~~~~~~~~~~~~~~~~
 
-// store the user's initials and score together as an object
-// var savedScore = {
-//     name: 'initials'.value,
-//     theirScore: JSON.stringify(score).value,
-// };
-
-//const jsonObj = JSON.stringify(hiscores);
-
-// const addName = (event)=>{
-//     event.preventDefault();
-//     let savedScore = {
-//         name: 'initials'.value,
-//         theirScore: JSON.stringify(score).value
-//     }
-//     hiscores.push(savedScore);
-//     document.forms[0].reset();
-// }
-
 var savedScore;
 var hiscores;
 
